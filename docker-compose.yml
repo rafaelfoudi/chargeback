@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-chargeback
+    environment:
+      POSTGRES_DB: chargeback
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-chargeback
+    ports:
+      - "5672:5672"
+      - "15672:15672"
